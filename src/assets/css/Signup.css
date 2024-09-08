@@ -1,0 +1,60 @@
+.sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top:200px;
+}
+
+.sign-form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+.sign-text{
+    margin-bottom: 30px;
+}
+
+.sign-input{
+    background-color: #dbdada;
+    color: black;
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+    text-align: center;
+    margin: 5px 0px;
+    border: none;
+    font-weight: bold;
+    transition: 0.1s ease-out;
+    
+}
+
+.sign-input:hover{
+    background-color: #f0f0f0;
+    transition: 0.1s ease-in;
+}
+
+.sign-input:focus{
+    background-color: #f0f0f0;
+}
+.sign-input:focus { 
+    outline: none; 
+}
+
+.btn{
+    margin: 20px auto;
+    width: 100px;
+    height: 35px;
+    border-radius: 18px;
+    border: none;
+    background-color:rgb(115, 105, 248);
+    color: white;
+    font-family: bold;
+    transition: 0.1s ease-in;
+}
+
+.btn:hover{
+    background-color: rgb(155, 125, 278);
+    transition: 0.1s ease-in;
+}
