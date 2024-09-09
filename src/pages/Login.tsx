@@ -9,7 +9,7 @@ export default function Login() {
   };
 
   return (
-    <div className='login'>
+    <div className='login bg-img'>
       <div className='login-box'>
           <div className="login-text">
             <h1>Hi!</h1>

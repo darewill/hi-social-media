@@ -8,7 +8,7 @@ export default function Signup() {
     navigate('/');
   };
   return (
-    <div className='signup'>
+    <div className='signup bg-img'>
       <div className='signup-box'>
           <div className="signup-text">
             <h1>Hi!</h1>
@@ -25,7 +25,7 @@ export default function Signup() {
       <hr className="hr-line"></hr>
       <div className='signup-box'>
         <h3>Already have an account?</h3>
-        <button className="btn" onClick={handleLoginClick}>Login</button>
+        <button className="btn" onClick={handleLoginClick}>Sign in</button>
       </div>
     </div>
   )

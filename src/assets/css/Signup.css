@@ -63,3 +63,9 @@
     width: 350px;
     margin-bottom: 20px;
   }
+
+  .bg-img{ 
+    background-image: url('../images/login.png');
+    background-repeat: no-repeat;
+    background-position: 18% 0%;
+  }
