@@ -34,7 +34,7 @@ export default function Navbar() {
             <FontAwesomeIcon icon={faBars} />
           </Link>
           <div className="user">
-            <img src={`CurrentUser.map(user=>(user.ProfileImage))`} alt=''/>
+            {/* <img src={CurrentUser.map(user=>(user.ProfileImage))} alt=''/> */}
           </div>
         </div>
       </div>
