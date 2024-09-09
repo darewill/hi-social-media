@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell, faEnvelope, faHome, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import CurrentUser from "../js/CurrentUserData";
 import '../css/Navbar.css';
+import DarkMode from "./DarkMode";
 
 export default function Navbar() {
   return (
@@ -31,6 +32,7 @@ export default function Navbar() {
           <Link to='/'>
             <FontAwesomeIcon icon={faBell} />
           </Link>
+          <DarkMode />
           <Link to='/'>
             <FontAwesomeIcon icon={faBars} />
           </Link>

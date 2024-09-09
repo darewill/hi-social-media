@@ -1,12 +1,67 @@
 *{
-    background-color: #ffffff;
-    color: #000000;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     outline: none;
     border: none;
+}
+
+:root{
+    --color-primary: #6c63ff;
+    --text-color: black;
+    --color-bg: rgb(236, 236, 236);
+    --color-card: white;
+    --color-soft: #aaaaaa;
+    --color-border: lightgray;
+    --color-red: red;
+}
+
+.darkmode{
+    --color-primary: #63b1ff;
+    --text-color: white;
+    --color-bg: rgb(37, 37, 37);
+    --color-card: #111111;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    max-width: 991px;
+    width: 100%;
+    margin: 0 auto;
+}
+h1,h2,h3,h4,h5{
+    font-weight: 600;
+    color: var(--text-color);
+    
+}
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user img{
+    width: 33px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+}
+.user h4{
+    color: var(--color-primary);
+}
+body{
+    background: var(--color-bg);
+    color: var(--color-soft);
+}
+small,p{
+    color: var(--color-soft);
 }
 
 main{
