@@ -5,7 +5,7 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate('/');
+    navigate('/login');
   };
   return (
     <div className='signup bg-img'>
