@@ -51,7 +51,7 @@ hr{
     }
 }
 
-@media (max-width: 991px){
+@media (max-width: 768px){
     .leftBar{
         display: none;
     }

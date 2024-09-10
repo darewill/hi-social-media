@@ -95,3 +95,17 @@ main{
     background: var(--color-red);
     color: white;
 }
+
+@media (max-width: 1024px){
+    main{
+        grid-template-columns: 8% 56% 32%;
+    }
+}
+@media (max-width: 768px){
+    main{
+        grid-template-columns: 100%;
+    }
+    .container{
+        width: 94%;
+    }
+}

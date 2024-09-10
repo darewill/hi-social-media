@@ -1,13 +1,13 @@
 import React from "react";
-import "../assets/css/Stories.css";
+import "../css/Stories.css";
 import MyStory from "./MyStory";
-import StoriesData from '../assets/js/StoriesData';
+import StoriesData from '../js/StoriesData';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 export default function Stories() {
   return (
-    <div>
+    <div className='stories'>
       <MyStory />
 
       <Swiper
