@@ -30,3 +30,9 @@
 .post-categories input{
     display: none;
 }
+.post-categories span{
+    transition: .3 ease;
+}
+.post-categories span:hover{
+    color: var(--color-primary);
+}

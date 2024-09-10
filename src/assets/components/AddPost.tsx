@@ -16,20 +16,14 @@ export default function AddPost() {
         <div className="post-categories">
             <label htmlFor='file'>
                 <input type='file' id='file'/>
-                <span>
-                    <FontAwesomeIcon icon={faImage} />
-                    Photos
-                </span>
+                <span><FontAwesomeIcon icon={faImage} /> Photos</span>
             </label>
             <label htmlFor='file'>
                 <input type='file' id='file'/>
-                <span>
-                    <FontAwesomeIcon icon={faVideo} />
-                    Videos
-                </span>
-                <span><FontAwesomeIcon icon={faTags} />Tag</span>
-                <span><FontAwesomeIcon icon={faSmile} />Emojis</span>
+                <span><FontAwesomeIcon icon={faVideo} /> Videos</span>
             </label>
+                <span><FontAwesomeIcon icon={faTags} /> Tag</span>
+                <span><FontAwesomeIcon icon={faSmile} /> Emojis</span>
         </div>
     </form>
   )
