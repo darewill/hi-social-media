@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Feeds.css'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faListDots, faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { faComment, faListDots, faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 export default function Feed({fd}) {
   return (
@@ -26,6 +26,9 @@ export default function Feed({fd}) {
       <div className="bottom-content">
         <div className="action-item">
           <span><FontAwesomeIcon icon={faStar}/> 14 Stars</span>
+        </div>
+        <div className="action-item">
+          <span><FontAwesomeIcon icon={faComment}/> 2 Comments</span>
         </div>
       </div>
     </div>
