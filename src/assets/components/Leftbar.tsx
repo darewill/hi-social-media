@@ -15,7 +15,7 @@ export default function Leftbar() {
     <div className="leftBar">
       <div className="left-container">
         <div className="menu">
-          <Link to="/id">
+          <Link to="/profile/id">
             <div className="user">
               <img
                 src={CurrentUser[0].ProfileImage}

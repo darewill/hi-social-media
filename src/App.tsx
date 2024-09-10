@@ -3,7 +3,7 @@ import { Outlet, Router, RouterProvider, createBrowserRouter } from 'react-route
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
-import Profile from './pages/Profile'
+import Profile from './pages/profile/Profile'
 import Navbar from './assets/components/Navbar'
 import Leftbar from './assets/components/Leftbar'
 import Rightbar from './assets/components/Rightbar'
@@ -39,7 +39,7 @@ function App() {
         element: <Home />
       },
       {
-        path: '/:id',
+        path: '/profile/:id',
         element: <Profile />
       },
     ]

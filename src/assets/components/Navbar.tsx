@@ -17,7 +17,7 @@ export default function Navbar() {
           <Link to="/">
             <FontAwesomeIcon icon={faHome} />
           </Link>
-          <Link to="/id">
+          <Link to="/profile/id">
             <FontAwesomeIcon icon={faUser} />
           </Link>
           <div className="search-bar">
@@ -26,7 +26,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className="nav-right">
-          <Link to='/Chatbox/id'>
+          <Link to='/chatbox/id'>
             <FontAwesomeIcon icon={faEnvelope} />
           </Link>
           <Link to='/'>

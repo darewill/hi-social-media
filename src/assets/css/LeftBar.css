@@ -41,3 +41,18 @@ hr{
     color: var(--color-soft);
     font-size: .9rem;
 }
+
+@media (max-width: 1024px){
+    .left-container{
+        width: fit-content;
+    }
+    .left-container h4{
+        display: none;
+    }
+}
+
+@media (max-width: 991px){
+    .leftBar{
+        display: none;
+    }
+}

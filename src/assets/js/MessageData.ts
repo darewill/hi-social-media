@@ -1,7 +1,6 @@
 
-import MeessageImage1 from '../images/MessageProfile1.png'
+import MeessageImage1 from '../images/MessageProfile1.jpg'
 import MeessageImage2 from '../images/MessageProfile2.jpg'
-import MeessageImage3 from '../images/MessageProfile4.jpg'
 
 
 const Messages =[
@@ -15,12 +14,6 @@ const Messages =[
         id: 2,
         name: 'Martha Williams',
         img: MeessageImage2,
-        mText: 'Lorem ipsum dolor sit amet.'
-    },
-    {
-        id: 3,
-        name: 'Lauren Shaws',
-        img: MeessageImage3,
         mText: 'Lorem ipsum dolor sit amet.'
     },
 ];
