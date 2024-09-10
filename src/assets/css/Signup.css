@@ -42,23 +42,6 @@
     outline: none; 
 }
 
-.btn{
-    margin: 20px auto;
-    width: 100px;
-    height: 35px;
-    border-radius: 18px;
-    border: none;
-    background-color:rgb(115, 105, 248);
-    color: white;
-    font-family: bold;
-    transition: 0.1s ease-in;
-}
-
-.btn:hover{
-    background-color: rgb(155, 125, 278);
-    transition: 0.1s ease-in;
-}
-
 .hr-line {
     width: 350px;
     margin-bottom: 20px;

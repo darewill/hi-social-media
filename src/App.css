@@ -21,7 +21,7 @@
 }
 
 .darkmode{
-    --color-primary: #63b1ff;
+    --color-primary: #5297db;
     --text-color: white;
     --color-bg: rgb(37, 37, 37);
     --color-card: #111111;
@@ -51,7 +51,7 @@ img{
     gap: 10px;
 }
 .user img{
-    width: 33px;
+    width: 40px;
     aspect-ratio: 1/1;
     border-radius: 50%;
 
