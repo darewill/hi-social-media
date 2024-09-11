@@ -69,7 +69,7 @@ export default function Leftbar() {
               <h4>Videos</h4>
             </div>
           </Link>
-          <Link to="/chatbox/id">
+          <Link to='/chatbox/id'>
             <div className="item">
               <img src={Message} alt="" />
               <h4>Messages</h4>

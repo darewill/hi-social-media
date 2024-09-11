@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
 import Profile from './pages/profile/Profile'
+import Chatbox from './pages/chatbox/Chatbox'
 import Navbar from './assets/components/Navbar'
 import Leftbar from './assets/components/Leftbar'
 import Rightbar from './assets/components/Rightbar'
@@ -41,6 +42,10 @@ function App() {
       {
         path: '/profile/:id',
         element: <Profile />
+      },
+      {
+        path: '/chatbox/:id',
+        element: <Chatbox />
       },
     ]
     },
