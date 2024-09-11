@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell, faEnvelope, faHome, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-import CurrentUser from "../js/CurrentUserData";
+import CurrentUser from "../dummyAPIs/CurrentUserData";
 import '../css/Navbar.css';
 import DarkMode from "./DarkMode";
 

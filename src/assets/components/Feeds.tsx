@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/Feeds.css";
 import Feed from "./Feed";
-import HomeFeedData from '../js/HomeFeedData';
+import HomeFeedData from '../dummyAPIs/HomeFeedData';
 
 export default function Feeds() {
   return (

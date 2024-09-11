@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Stories.css";
-import CurrentUserData from "../js/CurrentUserData";
+import CurrentUserData from "../dummyAPIs/CurrentUserData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 

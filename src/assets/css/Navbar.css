@@ -21,6 +21,7 @@ nav{
 .nav-container a{
     color: var(--color-primary);
     font-size: 1.1rem;
+    cursor:pointer;
 }
 
 .nav-left{

@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/FriendRequest.css";
 import { Link } from "react-router-dom";
-import FriendReqData from "../js/FriendRequest";
+import FriendReqData from "../dummyAPIs/FriendRequest";
 
 export default function FriendRequest() {
   return (

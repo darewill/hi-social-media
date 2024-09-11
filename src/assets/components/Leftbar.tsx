@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/LeftBar.css";
 import { Link } from "react-router-dom";
-import CurrentUser from "../js/CurrentUserData";
+import CurrentUser from "../dummyAPIs/CurrentUserData";
 import Friend from "../icons/1.png";
 import Groups from "../icons/2.png";
 import Market from "../icons/3.png";

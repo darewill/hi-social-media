@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/Stories.css";
 import MyStory from "./MyStory";
-import StoriesData from '../js/StoriesData';
+import StoriesData from '../dummyAPIs/StoriesData';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 

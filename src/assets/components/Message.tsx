@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Message.css'
 import { Link } from 'react-router-dom';
-import MessageData from '../js/MessageData'
+import MessageData from '../dummyAPIs/MessageData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faSearch } from '@fortawesome/free-solid-svg-icons';
 

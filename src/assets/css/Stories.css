@@ -50,9 +50,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     top: 70%;
-    padding: 7px;
+    padding: 5px 9px;
     border-radius: 50%;
     background: var(--color-primary);
+    cursor:pointer;
 }
 .userStory label input{
     display: none;
