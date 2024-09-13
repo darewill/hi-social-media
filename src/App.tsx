@@ -18,12 +18,13 @@ function App() {
       <>
       <Navbar />
         <main>
-          <Leftbar />
+          {/* <Leftbar /> */}
           <div className="container">
             <Outlet />
           </div>
-          <Rightbar />
+          {/* <Rightbar /> */}
         </main>
+        <Leftbar />
       </>
     );
   };

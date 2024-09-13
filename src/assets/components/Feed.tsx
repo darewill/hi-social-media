@@ -35,11 +35,7 @@ export default function Feed({fd}) {
         <div className="action-item">
           <span><FontAwesomeIcon icon={faStar}/> 14 Stars</span>
         </div>
-        <div className="action-item" onClick={CommentHandler}>
-          <span><FontAwesomeIcon icon={faComment}/> 2 Comments</span>
-        </div>
       </div>
-      {openComment && <Comments />}
     </div>
   )
 }

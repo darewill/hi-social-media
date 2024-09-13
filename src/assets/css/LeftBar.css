@@ -1,9 +1,18 @@
 .leftBar{
     position: sticky;
-    top: 3.6rem;
+    bottom: 0.1px;
     background: var(--color-card);
-    height: calc(100vh - 3.6rem);
+    /* height: calc(100vh - 3.6rem); */
     overflow: auto;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 2.5%;
+}
+.pstbtn {
+    height: fit-content;
+    margin-top: 15px;
 }
 
 .leftBar::-webkit-scrollbar{

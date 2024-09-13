@@ -69,7 +69,7 @@ small,p{
 
 main{
     display: grid;
-    grid-template-columns: 20% 54% 23%;
+    grid-template-columns: 100%;
     gap: 3%;
     width: 100%;
 }
@@ -95,6 +95,7 @@ main{
     background: var(--color-red);
     color: white;
 }
+
 
 @media (max-width: 1024px){
     main{

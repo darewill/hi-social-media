@@ -28,6 +28,24 @@ const Stories =[
         name: 'Jane Browns',
         storyProfile: StoryProfile3,
         story: Story3
+    },
+    {
+        id: 1, 
+        name: 'Rose Redemption',
+        storyProfile: StoryProfile1,
+        story: Story1
+    },     
+    {
+        id: 2, 
+        name: 'Alyxa Doie',
+        storyProfile:StoryProfile2,
+        story: Story2
+    },     
+    {
+        id: 3, 
+        name: 'Jane Browns',
+        storyProfile: StoryProfile3,
+        story: Story3
     }
 ];
 

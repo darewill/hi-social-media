@@ -15,60 +15,13 @@ export default function Leftbar() {
     <div className="leftBar">
       <div className="left-container">
         <div className="menu">
-          <Link to="/profile/id">
-            <div className="user">
-              <img
-                src={CurrentUser[0].ProfileImage}
-                alt={CurrentUser[0].name}
-                id="user-icon"
-              />
-              <h4 className="user-nm">{CurrentUser[0].name}</h4>
-            </div>
-          </Link>
-
           <Link to="/">
             <div className="item">
               <img src={Friend} alt="" />
               <h4>Friends</h4>
             </div>
           </Link>
-          <Link to="/">
-            <div className="item">
-              <img src={Groups} alt="" />
-              <h4>Groups</h4>
-            </div>
-          </Link>
-          <Link to="/">
-            <div className="item">
-              <img src={Market} alt="" />
-              <h4>Market</h4>
-            </div>
-          </Link>
-          <Link to="/">
-            <div className="item">
-              <img src={Watch} alt="" />
-              <h4>Watch</h4>
-            </div>
-          </Link>
-        </div>
-
-        <hr />
-
-        <div className="menu">
-          <h4 className="others">Your Shortcuts</h4>
-
-          <Link to="/">
-            <div className="item">
-              <img src={Gallery} alt="" />
-              <h4>Gallery</h4>
-            </div>
-          </Link>
-          <Link to="/">
-            <div className="item">
-              <img src={Videos} alt="" />
-              <h4>Videos</h4>
-            </div>
-          </Link>
+          <button type="submit" className="btn btn-primary pstbtn">Post</button>
           <Link to='/chatbox/id'>
             <div className="item">
               <img src={Message} alt="" />
