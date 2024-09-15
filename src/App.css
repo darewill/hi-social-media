@@ -18,6 +18,7 @@
     --color-soft: #aaaaaa;
     --color-border: lightgray;
     --color-red: red;
+    --color-star: rgb(255, 24, 178);
 }
 
 .darkmode{
@@ -25,6 +26,7 @@
     --text-color: white;
     --color-bg: rgb(37, 37, 37);
     --color-card: #111111;
+    --color-star: rgb(24, 190, 255);
 }
 body{
     overflow-x: hidden;

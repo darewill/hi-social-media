@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Profile from './pages/profile/Profile'
 import Chatbox from './pages/chatbox/Chatbox'
 import Navbar from './assets/components/Navbar'
-import Leftbar from './assets/components/Leftbar'
+import BottomBar from './assets/components/BottomBar'
 import Rightbar from './assets/components/Rightbar'
 
 function App() {
@@ -18,13 +18,13 @@ function App() {
       <>
       <Navbar />
         <main>
-          {/* <Leftbar /> */}
+          {/* <BottomBar /> */}
           <div className="container">
             <Outlet />
           </div>
           {/* <Rightbar /> */}
         </main>
-        <Leftbar />
+        <BottomBar />
       </>
     );
   };

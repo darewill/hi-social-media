@@ -13,6 +13,7 @@
 .pstbtn {
     height: fit-content;
     margin-top: 15px;
+    
 }
 
 .leftBar::-webkit-scrollbar{
@@ -49,6 +50,10 @@ hr{
 .others{
     color: var(--color-soft);
     font-size: .9rem;
+}
+.post-item{
+    height: 18px;
+    width: 18px;
 }
 
 @media (max-width: 1024px){

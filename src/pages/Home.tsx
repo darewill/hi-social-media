@@ -9,7 +9,7 @@ export default function Home (){
     return (
         <>
             <Stories />
-            <AddPost />
+            {/* <AddPost /> */}
             <Feeds />
         </>
     );

@@ -1,18 +1,12 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Feeds.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faListDots, faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import Comments from './Comments';
 
 
 export default function Feed({fd}) {
 
-  let [openComment, setOpenComment] = useState(true);
-  const CommentHandler =() => {
-    setOpenComment(!openComment)
-  }
   return (
     <div className='feed' key={fd.id}>
       <div className="top-content">
@@ -33,7 +27,7 @@ export default function Feed({fd}) {
       </div>
       <div className="bottom-content">
         <div className="action-item">
-          <span><FontAwesomeIcon icon={faStar}/> 14 Stars</span>
+          <span className='star'><FontAwesomeIcon icon={faStar}/> 14 Stars</span>
         </div>
       </div>
     </div>
