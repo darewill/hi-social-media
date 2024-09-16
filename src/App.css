@@ -19,6 +19,8 @@
     --color-border: lightgray;
     --color-red: red;
     --color-star: rgb(255, 24, 178);
+    --color-p: black;
+    --color-sbb: white;
 }
 
 .darkmode{
@@ -28,9 +30,14 @@
     --color-bg: rgb(37, 37, 37);
     --color-card: #111111;
     --color-star: rgb(255, 24, 178);
+    --color-p: #aaaaaa;
+    --color-sbb: #ffffff24;
 }
 body{
     overflow-x: hidden;
+}
+.search-bar{
+    background-color: var(--color-bg);
 }
 .container{
     max-width: 991px;
@@ -67,7 +74,7 @@ body{
     color: var(--color-soft);
 }
 small,p{
-    color: var(--color-soft);
+    color: var(--color-p);
 }
 
 main{
@@ -86,6 +93,9 @@ main{
     font-size: .9rem;
     font-weight: 500;
     transition: .3s ease;
+    color: white;
+    background: var(--color-primary);
+    margin: 10px auto;
 }
 .btn:hover{
     opacity: .7;

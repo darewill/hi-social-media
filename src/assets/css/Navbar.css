@@ -66,7 +66,7 @@ nav {
 
 .search-bar:hover {
     cursor: pointer;
-    background-color: rgb(245, 243, 247);
+    background-color: var(--color-sbb);
     transition: 0.15s ease;
 }
 
