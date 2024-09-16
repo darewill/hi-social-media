@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,9 +15,27 @@ import { useAuth } from "../hooks/useAuth"; // Updated path for useAuth
 export default function Navbar() {
   const { user, logout } = useAuth(); // Use 'user' from Firebase authentication state
   const [dropdownOpen, setDropdownOpen] = useState(false); // State to control dropdown visibility
+  const dropdownRef = useRef<HTMLDivElement | null>(null); // Reference to the dropdown menu
 
   // Toggle dropdown menu
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const toggleDropdown = () => setDropdownOpen((prev) => !prev);
+
+  // Handle click outside the dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false); // Close dropdown if clicked outside
+      }
+    };
+
+    // Add event listener to detect clicks outside of the dropdown
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav>
@@ -57,7 +75,7 @@ export default function Navbar() {
 
                 {/* Dropdown Menu */}
                 {dropdownOpen && (
-                  <div className="dropdown-menu">
+                  <div ref={dropdownRef} className="dropdown-menu">
                     <Link to="/profile/id" className="dropdown-item">
                       Profile
                     </Link>

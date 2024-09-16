@@ -80,6 +80,13 @@ nav {
     position: relative;
     cursor: pointer;
 }
+.user-profile{
+    display: flex;
+    align-items: center;
+}
+.user-nm{
+    margin-left: 10px;
+}
 
 .dropdown-menu {
     position: absolute;
@@ -116,6 +123,7 @@ nav {
     width: 100%;
     text-align: left;
     color: var(--color-primary);
+    font-size: 1.1rem;
 }
 
 .btn-logout:hover {
