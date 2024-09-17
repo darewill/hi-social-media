@@ -43,12 +43,11 @@ export default function Settings() {
         <div className="select-opt text-black mt-[10px]">
           <Select>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Theme" />
+              <SelectValue placeholder="Choose" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              <SelectItem value="light">Male</SelectItem>
+              <SelectItem value="dark">Female</SelectItem>
             </SelectContent>
           </Select>
         </div>
