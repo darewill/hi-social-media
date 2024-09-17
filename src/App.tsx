@@ -5,7 +5,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import Profile from './pages/profile/Profile';
-import Chatbox from './pages/Chatbox/Chatbox';
+import Chatbox from './pages/chatbox/Chatbox';
+import Settings from './pages/Settings';
 import Navbar from './assets/components/Navbar';
 import BottomBar from './assets/components/BottomBar';
 import Rightbar from './assets/components/Rightbar';
@@ -18,7 +19,8 @@ function App() {
     return (
       <>
         <Navbar />
-        <main>
+        <div className="layout-container">
+        <main className="main-content">
           {/* <BottomBar /> */}
           <div className="container">
             <Outlet />
@@ -26,6 +28,7 @@ function App() {
           {/* <Rightbar /> */}
         </main>
         <BottomBar />
+        </div>
       </>
     );
   };
@@ -51,6 +54,10 @@ function App() {
         {
           path: '/chatbox/:id',
           element: <Chatbox />,
+        },
+        {
+          path: '/settings',
+          element: <Settings />,
         },
       ],
     },

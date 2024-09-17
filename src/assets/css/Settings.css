@@ -1,0 +1,31 @@
+.profile-pic{
+    margin: 20px auto;
+    background-color: var(--color-card);
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 450px;
+    border-radius: 20px;
+}
+.bio-desc{
+    background-color: var(--color-card);
+    width: 450px;
+    height: 80px;
+    color: var(--text-color);
+}
+.select-opt{
+    background-color: var(--color-card);
+    border-radius: 15px;
+    color: var(--text-color);
+}
+.focus\:ring-ring:focus {
+    --tw-ring-color: none;
+}
+.save-btn{
+    background-color: var(--color-primary);
+    transition: .2s ease;
+}
+.save-btn:hover{
+    background-color: var(--color-star);
+    transition: .2s ease;
+}

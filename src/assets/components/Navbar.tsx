@@ -79,7 +79,7 @@ export default function Navbar() {
                     <Link to="/profile/id" className="dropdown-item">
                       Profile
                     </Link>
-                    <Link to="#" className="dropdown-item">
+                    <Link to="/settings" className="dropdown-item">
                       Settings
                     </Link>
                     <button className="dropdown-item btn-logout" onClick={logout}>

@@ -8,7 +8,7 @@
 .menu{
     display: flex;
     justify-content: center;
-    gap: 2.5%;
+    gap: 30px;
 }
 .pstbtn {
     height: fit-content;
