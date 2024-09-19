@@ -10,6 +10,7 @@ import {
 } from "../assets/components/select";
 import { uploadProfileImage } from "../firebaseConfig";
 import { auth } from "../firebaseConfig";
+import ProfileImage from "../assets/images/ezio.jpg";
 
 interface UserProfile {
   id: number;
@@ -85,7 +86,7 @@ export default function Settings() {
             <div className="image">
               <img
                 className="h-20 w-20 rounded-full"
-                src={photoURL || 'default-avatar.png'}
+                src={photoURL || ProfileImage}
                 alt={displayName || 'User Avatar'}
               />
             </div>

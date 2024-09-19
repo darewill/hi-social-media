@@ -11,6 +11,7 @@ import CurrentUser from "../dummyAPIs/CurrentUserData";
 import "../css/Navbar.css";
 import DarkMode from "./DarkMode";
 import { useAuth } from "../hooks/useAuth"; // Updated path for useAuth
+import ProfileImage from '../images/ezio.jpg';
 
 export default function Navbar() {
   const { user, logout } = useAuth(); // Use 'user' from Firebase authentication state
@@ -66,7 +67,7 @@ export default function Navbar() {
               <div className="user">
                 <div onClick={toggleDropdown} className="user-profile">
                   <img
-                    src={user.photoURL ?? 'defaultImageUrl'}
+                    src={user.photoURL ?? ProfileImage}
                     alt={user.displayName ?? 'User Profile'}
                     id="user-icon"
                   />

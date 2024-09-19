@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeed, faLink, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../hooks/useAuth";
+import ProfileImage from '../images/ezio.jpg';
+import CoverImage from '../images/cover.jpg';
 
 interface UserProfile {
   id: number;
@@ -34,10 +36,10 @@ export default function UserProfile() {
   return (
     <div className="userProfile">
       <div className="cover-photos">
-        <img src={user?.photoURL || "defaultProfileImage.jpg"} alt="Profile"/>
+        <img src={user?.photoURL || CoverImage} alt="Profile"/>
       </div>
       <div className="profile-info">
-        <img src={CurrentUserData[0].ProfileImage} alt="" />
+        <img src={user?.photoURL || ProfileImage} alt="" />
         <div className="user-name">
           <h3>{user?.displayName || "John Doe"}</h3>
           <h5>{user?.email || "username"}</h5>
