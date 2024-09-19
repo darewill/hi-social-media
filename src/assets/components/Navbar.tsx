@@ -66,11 +66,11 @@ export default function Navbar() {
               <div className="user">
                 <div onClick={toggleDropdown} className="user-profile">
                   <img
-                    src={CurrentUser[0].ProfileImage}
-                    alt={CurrentUser[0].name}
+                    src={user.photoURL ?? 'defaultImageUrl'}
+                    alt={user.displayName ?? 'User Profile'}
                     id="user-icon"
                   />
-                  <h4 className="user-nm">{CurrentUser[0].name}</h4>
+                  <h4 className="user-nm">{user.displayName ?? 'User'}</h4>
                 </div>
 
                 {/* Dropdown Menu */}

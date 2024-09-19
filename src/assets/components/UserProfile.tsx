@@ -1,21 +1,46 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../css/UserProfile.css";
 import CurrentUserData from "../dummyAPIs/CurrentUserData";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeed, faLink, faMessage } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../hooks/useAuth";
+
+interface UserProfile {
+  id: number;
+  name: string;
+  bio: string;
+  gender: string;
+  profileImage: string;
+}
 
 export default function UserProfile() {
+
+  const { user } = useAuth();
+  const [profile, setProfile] = useState<UserProfile | null>(null);
+
+  useEffect(() => {
+    // Fetch the user profile from the backend
+    fetch("http://localhost:5139/api/profile/1") // Assuming 1 is the logged-in user's ID
+      .then((response) => response.json())
+      .then((data) => setProfile(data))
+      .catch((error) => console.error("Error fetching profile:", error));
+  }, []);
+
+  if (!profile) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="userProfile">
       <div className="cover-photos">
-        <img src={CurrentUserData[0].CoverPhoto} alt=""/>
+        <img src={user?.photoURL || "defaultProfileImage.jpg"} alt="Profile"/>
       </div>
       <div className="profile-info">
         <img src={CurrentUserData[0].ProfileImage} alt="" />
         <div className="user-name">
-          <h3>{CurrentUserData[0].name}</h3>
-          <h5>{CurrentUserData[0].username}</h5>
+          <h3>{user?.displayName || "John Doe"}</h3>
+          <h5>{user?.email || "username"}</h5>
         </div>
         <div className="profile-button">
           <Link to='/chatbox/id'>
@@ -32,10 +57,7 @@ export default function UserProfile() {
           </button>
         </div>
         <div className="bio">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus
-          enim modi sapiente at debitis reprehenderit eum corporis consequuntur
-          in, tenetur minima consectetur voluptatum est. Consequatur possimus
-          qui quia vero dolore.
+          {profile.bio}
         </div>
       </div>
     </div>
