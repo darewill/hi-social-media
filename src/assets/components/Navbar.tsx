@@ -1,17 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faBell,
-  faEnvelope,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
-import CurrentUser from "../dummyAPIs/CurrentUserData";
+import { faBars, faBell, faEnvelope, faSearch } from "@fortawesome/free-solid-svg-icons";
 import "../css/Navbar.css";
 import DarkMode from "./DarkMode";
 import { useAuth } from "../hooks/useAuth"; // Updated path for useAuth
-import ProfileImage from '../images/ezio.jpg';
+import DefaultProfileImage from '../images/ezio.jpg'; // Fallback image
 
 export default function Navbar() {
   const { user, logout } = useAuth(); // Use 'user' from Firebase authentication state
@@ -49,7 +43,7 @@ export default function Navbar() {
         <div className="nav-center">
           <div className="search-bar">
             <FontAwesomeIcon icon={faSearch} />
-            <input type="search" />
+            <input type="search" placeholder="Search" />
           </div>
         </div>
         <div className="nav-right">
@@ -66,11 +60,13 @@ export default function Navbar() {
               {/* User Profile Dropdown */}
               <div className="user">
                 <div onClick={toggleDropdown} className="user-profile">
+                  {/* Fallback to default profile image if user photoURL is missing */}
                   <img
-                    src={user.photoURL ?? ProfileImage}
+                    src={user.photoURL ?? DefaultProfileImage}
                     alt={user.displayName ?? 'User Profile'}
                     id="user-icon"
                   />
+                  {/* Display user displayName or fallback to 'User' */}
                   <h4 className="user-nm">{user.displayName ?? 'User'}</h4>
                 </div>
 

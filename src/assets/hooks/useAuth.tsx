@@ -26,13 +26,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Firebase listener for authentication state
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
-      setLoading(false); // Once auth state is determined, stop loading
+      setLoading(false);
     });
-
-    // Cleanup subscription on unmount
+  
     return unsubscribe;
   }, []);
 

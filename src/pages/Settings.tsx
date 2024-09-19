@@ -8,13 +8,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../assets/components/select";
-import { uploadProfileImage } from "../firebaseConfig";
-import { auth } from "../firebaseConfig";
+import { auth, uploadProfileImage } from "../firebaseConfig";
+import { updateProfile } from "firebase/auth";
 import ProfileImage from "../assets/images/ezio.jpg";
 
 interface UserProfile {
   id: number;
   name: string;
+  username: string;
   bio: string;
   gender: string;
   profileImage: string;
@@ -53,25 +54,45 @@ export default function Settings() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
     setSelectedFile(file);
+  
+    if (file) {
+      handlePhotoUpload(file); // Trigger photo upload after file selection
+    }
   };
 
-  // const handlePhotoUpload = async () => {
-  //   if (!selectedFile) return;
-  //   try {
-  //     const imageUrl = await uploadProfileImage(
-  //       selectedFile,
-  //       profile.id.toString()
-  //     );
-  //     setProfile({ ...profile, profileImage: imageUrl });
-  //     setMessage("Profile photo updated successfully!");
-  //   } catch (error) {
-  //     console.error("Error uploading photo:", error);
-  //   }
-  // };
+  const handlePhotoUpload = async (file: File) => {
+    try {
+      const imageUrl = await uploadProfileImage(file, user?.uid || profile.id.toString()); 
+      setPhotoURL(imageUrl); // Update the local photo URL
+      setProfile({ ...profile, profileImage: imageUrl }); // Update profile image
+      setMessage("Profile photo updated successfully!");
+    } catch (error) {
+      console.error("Error uploading photo:", error);
+      setMessage("Failed to update profile photo.");
+    }
+  };
 
   const handleChangePhotoClick = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
+    }
+  };
+
+  const handleImageUpload = async (file: File) => {
+    if (auth.currentUser) {
+      try {
+        // Upload image to Firebase Storage
+        const downloadURL = await uploadProfileImage(file, auth.currentUser.uid);
+  
+        // Update user's photoURL in Firebase auth profile
+        await updateProfile(auth.currentUser, {
+          photoURL: downloadURL,
+        });
+  
+        console.log("Profile image updated successfully:", downloadURL);
+      } catch (error) {
+        console.error("Error updating profile image:", error);
+      }
     }
   };
 
@@ -92,6 +113,8 @@ export default function Settings() {
             </div>
             <div className="u-name">
               <h4 className="user-nm">{user?.displayName || 'No Name Available'}</h4>
+              <h4 className="user-nm">@{profile.username}</h4> 
+              {/* qito nalt kqyre */}
             </div>
           </div>
           <Button onClick={handleChangePhotoClick}>Change Photo</Button>
@@ -99,7 +122,9 @@ export default function Settings() {
             type="file"
             ref={fileInputRef}
             style={{ display: "none" }} // Hide the input
-            onChange={handleFileChange} // Your existing file change handler
+            onChange={(e) => {
+              if (e.target.files?.[0]) handleImageUpload(e.target.files[0]);
+            }}
           />
         </div>
       </div>
@@ -135,7 +160,6 @@ export default function Settings() {
         >
           Save Changes
         </Button>
-        {saveMessage && <p>{saveMessage}</p>}
       </div>
     </div>
   );
