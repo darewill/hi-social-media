@@ -24,9 +24,6 @@ interface UserProfile {
 
 export default function Settings() {
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [message, setMessage] = useState<string | null>(null);
-  const [saveMessage, setSaveMessage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const user = auth.currentUser;
   const [displayName, setDisplayName] = useState<string | null>(null);
@@ -50,27 +47,6 @@ export default function Settings() {
   if (!profile) {
     return <div>Loading...</div>;
   }
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files ? e.target.files[0] : null;
-    setSelectedFile(file);
-  
-    if (file) {
-      handlePhotoUpload(file); // Trigger photo upload after file selection
-    }
-  };
-
-  const handlePhotoUpload = async (file: File) => {
-    try {
-      const imageUrl = await uploadProfileImage(file, user?.uid || profile.id.toString()); 
-      setPhotoURL(imageUrl); // Update the local photo URL
-      setProfile({ ...profile, profileImage: imageUrl }); // Update profile image
-      setMessage("Profile photo updated successfully!");
-    } catch (error) {
-      console.error("Error uploading photo:", error);
-      setMessage("Failed to update profile photo.");
-    }
-  };
 
   const handleChangePhotoClick = () => {
     if (fileInputRef.current) {
@@ -176,6 +152,7 @@ export default function Settings() {
       .then((response) => response.json())
       .then((data) => {
         alert("Profile updated successfully");
+        window.location.reload();
         // Optionally, you can set the profile again with the updated data
         setProfile(data);
       })
