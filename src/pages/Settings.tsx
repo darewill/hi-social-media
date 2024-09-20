@@ -89,8 +89,8 @@ export default function Settings() {
             </div>
             <div className="u-name">
               <h4 className="user-nm">{user?.displayName || 'No Name Available'}</h4>
-              <h4 className="user-nm">@{profile.username}</h4> 
-              {/* qito nalt kqyre */}
+              {/* <h4 className="user-nm">@{profile.username}</h4>  */}
+              
             </div>
           </div>
           <Button onClick={handleChangePhotoClick}>Change Photo</Button>

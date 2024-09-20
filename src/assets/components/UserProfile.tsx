@@ -36,7 +36,8 @@ export default function UserProfile() {
   return (
     <div className="userProfile">
       <div className="cover-photos">
-        <img src={user?.photoURL || CoverImage} alt="Profile"/>
+        <img src={CoverImage} alt="Profile"/>
+        {/* user?.photoURL ||  */}
       </div>
       <div className="profile-info">
         <img src={user?.photoURL || ProfileImage} alt="" />
