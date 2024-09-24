@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../css/Stories.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
-import { auth, storage } from "../../firebaseConfig";
+import { auth, storage, firestore } from "../../firebaseConfig"; // Import firestore
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { doc, setDoc, getDoc, deleteDoc } from "firebase/firestore"; // Firestore functions
 import { formatDistanceToNow } from "date-fns";
 import ProfileImage from "../images/ezio.jpg";
 
@@ -16,11 +17,31 @@ export default function MyStory({ openStoryViewer }: MyStoryProps) {
   const [uploadedStory, setUploadedStory] = useState<string | null>(null);
   const [uploadTime, setUploadTime] = useState<Date | null>(null);
 
+  // Fetch the user's uploaded story on mount
   useEffect(() => {
     if (auth.currentUser) {
       setPhotoURL(auth.currentUser.photoURL);
+      fetchUploadedStory();
     }
   }, []);
+
+  // Fetch story data from Firestore
+  const fetchUploadedStory = async () => {
+    const userStoryRef = doc(firestore, "stories", auth.currentUser?.uid!);
+    const storySnapshot = await getDoc(userStoryRef);
+    if (storySnapshot.exists()) {
+      const storyData = storySnapshot.data();
+      const storyURL = storyData.storyUrl;
+      const storyUploadTime = storyData.uploadTime.toDate(); // Firestore timestamp to JS Date
+      const timeDiff = new Date().getTime() - storyUploadTime.getTime();
+      if (timeDiff < 24 * 60 * 60 * 1000) { // If story is less than 24 hours old
+        setUploadedStory(storyURL);
+        setUploadTime(storyUploadTime);
+      } else {
+        await deleteDoc(userStoryRef); // Automatically remove story if older than 24 hours
+      }
+    }
+  };
 
   const handleStoryUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -30,16 +51,26 @@ export default function MyStory({ openStoryViewer }: MyStoryProps) {
     await uploadBytes(storyRef, file);
     const storyURL = await getDownloadURL(storyRef);
 
+    const now = new Date();
     setUploadedStory(storyURL);
-    setUploadTime(new Date());
+    setUploadTime(now);
+
+    // Save the story URL and upload time to Firestore
+    const userStoryRef = doc(firestore, "stories", auth.currentUser?.uid!);
+    await setDoc(userStoryRef, {
+      storyUrl: storyURL,
+      uploadTime: now,
+    });
 
     // Remove story after 24 hours
-    setTimeout(() => {
+    setTimeout(async () => {
       setUploadedStory(null);
       setUploadTime(null);
+      await deleteDoc(userStoryRef);
     }, 24 * 60 * 60 * 1000);
   };
 
+  // Time since the story was uploaded
   const timeSinceUpload = uploadTime ? formatDistanceToNow(uploadTime, { addSuffix: true }) : null;
 
   // Handle click to open the story viewer
